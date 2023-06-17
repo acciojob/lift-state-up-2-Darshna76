@@ -1,19 +1,16 @@
 import React, {useState} from "react";
-import Child from "./child";
+import Child from Child;
 
-const Parent = ()=>{
-    let [modal, setModal] = useState(false);
-
-    function displayModal(){
-        setModal(true);
-    }
+const Parent = ()=> {
+    let [inputValue, setInputValue] = useState("")
 
     return(
         <div className="parent">
             <h1>Parent Component</h1>
-            <Child modal={modal} displayFun={displayModal}/>
+            <p>{inputValue}</p>
+            <Child handleInput = {setInputValue} />
         </div>
     )
 }
 
-export default Parent;
+export default Parent
